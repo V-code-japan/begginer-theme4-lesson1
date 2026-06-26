@@ -13,7 +13,8 @@
         "mission1.md",
         "mission2.md",
         "mission3.md",
-        "mission4.md"
+        "mission4.md",
+        "tutorial-info-cache.json"
     ],
     "testFiles": [
         "test.ts"
