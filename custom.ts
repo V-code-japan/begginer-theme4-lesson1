@@ -5,9 +5,10 @@ enum SideDirection {
     Right = 3,
 }
 
+
 namespace agent {
 
-    // block="エージェントに $blockType を $sideDirection 向きに $amount ブロック分並べさせる"
+    //% block="エージェントに $blockType を $sideDirection 向きに $amount ブロック分並べさせる"
     //% blockType.fieldEditor="gridpicker"
     //% blockType.fieldOptions.width=220
     //% blockType.fieldOptions.maxRows=10
@@ -18,18 +19,35 @@ namespace agent {
         blockType: Block,
         sideDirection: SideDirection,
         amount: number
-        ) {
-            let direction: FourDirection;
-            if (sideDirection === SideDirection.Left) {
-                direction = FourDirection.Left;
-            } else {
-                direction = FourDirection.Right;
-            }
-
-            for (let i = 0; i < amount; i++) {
-                agent.setItem(blockType, 1, 1);
-                agent.place(FourDirection.Forward);
-                agent.move(direction, 1);
-            }
+    ) {
+        let direction: SixDirection;
+        if (sideDirection === SideDirection.Left) {
+            direction = SixDirection.Left;
+        } else {
+            direction = SixDirection.Right;
         }
+
+        for (let i = 0; i < amount; i++) {
+            agent.setItem(blockType, 1, 1);
+            agent.place(FourDirection.Forward);
+            agent.move(direction, 1);
+        }
+    }
+
+    //% block="エージェントを $amount ブロック分 $sideDirection 方向の次の位置に移動させる"
+    //% amount.delf=1
+    export function toNextPosition(
+        sideDirection: SideDirection,
+        amount: number,
+    ) {
+        let direction: SixDirection;
+        if (sideDirection === SideDirection.Left) {
+            direction = SixDirection.Left;
+        } else {
+            direction = SixDirection.Right;
+        }
+
+        agent.move(SixDirection.Up, 1);
+        agent.move(direction, amount);
+    }
 }
