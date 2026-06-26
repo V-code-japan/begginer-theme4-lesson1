@@ -1,38 +1,35 @@
+enum SideDirection {
+    //% block="左"
+    Left = 2,
+    //% block="右"
+    Right = 3,
+}
 
-/**
-* このファイルを使って、独自の関数やブロックを定義してください。
-* 詳しくはこちらを参照してください：https://minecraft.makecode.com/blocks/custom
-*/
+namespace agent {
 
-// enum MyEnum {
-//     //% block="one"
-//     One,
-//     //% block="two"
-//     Two
-// }
+    // block="エージェントに $blockType を $sideDirection 向きに $amount ブロック分並べさせる"
+    //% blockType.fieldEditor="gridpicker"
+    //% blockType.fieldOptions.width=220
+    //% blockType.fieldOptions.maxRows=10
+    //% blockType.fieldOptions.columns=8
+    //% blockType.fieldOptions.hasSearchBar=true
+    //% amount.defl=1
+    export function fillBlockInLine(
+        blockType: Block,
+        sideDirection: SideDirection,
+        amount: number
+        ) {
+            let direction: FourDirection;
+            if (sideDirection === SideDirection.Left) {
+                direction = FourDirection.Left;
+            } else {
+                direction = FourDirection.Right;
+            }
 
-/**
- * Custom blocks
- */
-//% weight=100 color=#0fbc11 icon=""
-// namespace custom {
-//     /**
-//      * TODO: describe your function here
-//      * @param n describe parameter here, eg: 5
-//      * @param s describe parameter here, eg: "Hello"
-//      * @param e describe parameter here
-//      */
-//     //% block
-//     export function foo(n: number, s: string, e: MyEnum): void {
-//         // Add code here
-//     }
-
-//     /**
-//      * TODO: describe your function here
-//      * @param value describe value here, eg: 5
-//      */
-//     //% block
-//     export function fib(value: number): number {
-//         return value <= 1 ? value : fib(value -1) + fib(value - 2);
-//     }
-// }
+            for (let i = 0; i < amount; i++) {
+                agent.setItem(blockType, 1, 1);
+                agent.place(FourDirection.Forward);
+                agent.move(direction, 1);
+            }
+        }
+}
