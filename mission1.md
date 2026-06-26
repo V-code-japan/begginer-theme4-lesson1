@@ -43,6 +43,7 @@ player.onChat("run", function () {
 <p>`||agent.エージェント||`ボタンをクリックしてその中の`||agent.エージェントに…を１個、自分のスロット１番に設定（せってい）させる||`と書いてあるブロックを`||player.チャットコマンド～||`の中にドラックしてみましょう</p>
 <p>`||blocks.土ブロック||`をクリックして`||blocks.ニンジン||`にしましょう</p>
 <p><img style="width:100%" src="https://vcode-esia.com/images_for_world_data/Basic/Theme1/Lesson4/L4_set_block_to_agent1.gif"></p>
+
 ```block
 player.onChat("run", function () {
     agent.setItem(CARROTS, 1, 1)
@@ -53,6 +54,7 @@ player.onChat("run", function () {
 
 <p>`||agent.エージェント||`ボタンをクリックしてその中の`||agent.エージェントに前を耕（たがや）させる||`と書いてあるブロックを`||agent.エージェントに…設定させる||`の下にドラックしてみましょう</p>
 <p><img style="width:100%" src="https://vcode-esia.com/images_for_world_data/Basic/Theme1/Lesson4/L4_till1.gif"></P>
+
 ```block
 player.onChat("run", function () {
     agent.setItem(CARROTS, 1, 1)
@@ -64,6 +66,7 @@ player.onChat("run", function () {
 
 <p>`||agent.エージェント||`ボタンをクリックしてその中の`||agent.エージェントに前へ置（お）かせる||`と書いてあるブロックを`||agent.エージェントに前を耕させる||`の下にドラックしてみましょう</p>
 <p><img style="width:100%" src="https://vcode-esia.com/images_for_world_data/Basic/Theme1/Lesson4/L4_place_block1.gif"></p>
+
 ```block
 player.onChat("run", function () {
     agent.setItem(CARROTS, 1, 1)
@@ -77,6 +80,7 @@ player.onChat("run", function () {
 <p>`||agent.エージェント||`ボタンをクリックしてその中の`||agent.エージェントを前に１ブロック移動（いどう）させる||`と書いてあるブロックを`||agent.エージェントに前へ置かせる||`の下にドラックしてみましょう</p>
 <p>`||agent.エージェントを前に１ブロック移動させる||`の`||agent.前▼||`をクリックして`||agent.左▼||`に変更しましょう</p>
 <p><img style="width:100%" src="https://vcode-esia.com/images_for_world_data/Basic/Theme1/Lesson4/L4_move_left1.gif"></p>
+
 ```block
 player.onChat("run", function () {
     agent.setItem(CARROTS, 1, 1)
@@ -99,6 +103,7 @@ player.onChat("run", function () {
 <p>`||loops.ループ||`ボタンをクリックしてその中の`||loops.くりかえし４回||`と書いてあるブロックで今までに作ったプログラムをはさみましょう</p>
 <p>そして`||functions.４回||`を`||functions.５回||`にしましょう</p>
 <p><img style="width:100%" src="https://vcode-esia.com/images_for_world_data/Basic/Theme1/Lesson4/L4_repeat1.gif"></p>
+
 ```block
 player.onChat("run", function () {
     for (let index = 0; index < 5; index++) {
@@ -117,6 +122,7 @@ player.onChat("run", function () {
 <p>`||agent.エージェント||`ボタンをクリックしてその中の`||agent.エージェントを…へ西(xのマイナス方向)向きにテレポートさせる||`と書いてあるブロックを`||loops.くりかえし５回||`の上にドラックしてみましょう</p>
 <p>`||agent.西(xのマイナス方向)▼||`をクリックして`||agent.東(xのプラス方向)▼||`にしましょう</p>
 <p><img style="width:100%" src="https://vcode-esia.com/images_for_world_data/Basic/Theme1/Lesson4/L4_teleport1.gif"></p>
+
 ```block
 player.onChat("run", function () {
     agent.teleport(pos(0, 0, 0), EAST)
@@ -134,6 +140,7 @@ player.onChat("run", function () {
 <p>`||positions.ポジション||`ボタンをクリックしてその中の`||positions.ワールド0 0 0||`を`||agent.~0~0~0||`の上までドラッグします</p>
 <p>`||positions.ワールド0 0 0||`を`||positions.ワールド19 -21 -1||`にしましょう</p>
 <p><img style="width:100%" src="https://vcode-esia.com/images_for_world_data/Basic/Theme1/Lesson4/L4_set_world_pos1.gif"></p>
+
 ```block
 player.onChat("run", function () {
     agent.teleport(world(19, -21, -1), EAST)
